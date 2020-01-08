@@ -1,0 +1,63 @@
+    
+    <div class="row pt-5">
+        <div class="col-md-12">
+            <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                <fieldset class="scheduler-border">
+                    <legend class="scheduler-border">{{mode}} User</legend>    
+                    <div class="form-group row">
+                        <label for="name" class="col-md-2 col-form-label">First Name</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" formControlName="name" placeholder="Name" required>
+                            <div *ngIf="submitted && f.name.errors" class="text-danger">
+                                <div *ngIf="f.name.errors.required">Name is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="dateOfBirth" class="col-md-2 col-form-label">Date Of Birth</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" formControlName="dateOfBirth" placeholder="Date Of Birth" required>
+                            <div *ngIf="submitted && f.dateOfBirth.errors" class="text-danger">
+                                <div *ngIf="f.dateOfBirth.errors.required">Date Of Birth is required</div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="form-group row">
+                        <label for="email" class="col-md-2 col-form-label">Email</label>
+                        <div class="col-md-5">
+                            <input type="email" class="form-control" formControlName="email" placeholder="Email" required>
+                            <div *ngIf="submitted && f.email.errors" class="text-danger">
+                                <div *ngIf="f.email.errors.required">Email is required</div>
+                                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="status" class="col-md-2 col-form-label">Status</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" formControlName="status" placeholder="Status" required>
+                            <div *ngIf="submitted && f.status.errors" class="text-danger">
+                                <div *ngIf="f.status.errors.required">Status is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="hourlyRate" class="col-md-2 col-form-label">Hourly Rate</label>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" formControlName="hourlyRate" placeholder="Hourly Rate" required>
+                            <div *ngIf="submitted && f.hourlyRate.errors" class="text-danger">
+                                <div *ngIf="f.hourlyRate.errors.required">Hourly Rate is required</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-7 text-right">
+                            <button type="submit" class="btn btn-primary mr-2">Save</button>
+                            <button type="button" (click)="onClickCancel()" class="btn btn-primary">Cancel</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>

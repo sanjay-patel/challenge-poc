@@ -13,7 +13,7 @@ export class AppComponent {
     private exampleService: ExampleService
     ) {
       setTimeout(() => {
-        this.exampleService.showExample();
+        // this.exampleService.showExample();
       }, 500);
     }
 }
